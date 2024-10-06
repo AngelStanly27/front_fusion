@@ -188,3 +188,20 @@
 .end__bottom:hover span:nth-child(4){
     top: 0;
 }
+
+#Comprando{
+        text-align: center;
+        justify-content: center;
+        width: 25rem;
+        margin: 3rem 0;
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--azul-oscuro);
+        border: 2px solid #388E3C;
+        box-shadow: 0 4px 8px var(--sombra-caja); 
+        background-color: var(--azul-claro);
+        padding: 1rem .5rem;   
+        border-radius: 7px;
+        text-shadow: 1px 1px 3px  var(--azul-black);
+       
+}

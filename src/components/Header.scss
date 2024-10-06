@@ -343,4 +343,16 @@
     font-size: 14px;
     font-weight: bold;
     border: 2px solid white; // Borde blanco alrededor del número
-  }
+}
+
+#sum-resta{
+    position: relative;
+    margin: 0 .3rem;
+    background-color: var(--azul-oscuro);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid white;
+}

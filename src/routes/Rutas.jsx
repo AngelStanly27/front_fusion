@@ -17,6 +17,7 @@ import Portatil from '../pages/Portatil';
 import Enfriador from '../pages/Enfriador';
 import Deshumificador from '../pages/Deshumificador';
 import Torre from '../pages/Torre';
+import Comprando from '../pages/Comprando';
 
 const Rutas = () => {
     const routes = useRoutes(
@@ -71,6 +72,9 @@ const Rutas = () => {
 
             {path: '/torre',
              element: <Torre />},
+
+            {path: '/comprando',
+            element: <Comprando />},
 
             {path: '*',
              element: <NoEncontrado />},

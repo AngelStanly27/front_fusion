@@ -1,25 +1,49 @@
 import React, { useContext } from 'react'
 import CarritoContext from '../context/CarritoContext'
-import './Tabla.scss'
+import { useNavigate } from 'react-router'
 
+import './Tabla.scss'
 
 const ItemCarrito = ({producto}) => {
 
     const {carrito, eliminarCarritoContext, guardarCarrito} = useContext(CarritoContext)
+    
+    const navigate = useNavigate();
 
     const handleComprar = (id) =>{
       //comprra el Articulo deseado
 
       guardarCarrito(carrito)
       eliminarCarritoContext(id)
+      navigate('/Comprando');
 
-  
     }
 
     const handleEliminar =(id) =>{
         console.log('eliminano', id )
         eliminarCarritoContext(id)
     }
+
+    const clickAumentar = ()=>{
+      
+      producto.cantidad++
+      window.localStorage.setItem('carrito', JSON.stringify(carrito))
+      location.reload()
+    }
+    
+    const clickDisminuir = (id)=>{
+      
+      const remover = producto.cantidad--
+      window.localStorage.setItem('carrito', JSON.stringify(carrito))
+      
+      location.reload()
+      
+      // console.log('recibo', remover)
+      if(remover < 2){
+        handleEliminar(id)
+      }
+    }
+
   return (
     <tr>
             <td><img src={producto.foto} alt={producto.nombre}
@@ -28,9 +52,9 @@ const ItemCarrito = ({producto}) => {
             <td id="no_mostar">{producto.nombre}</td>
 
             <td>
-              <button> - </button>
+              <button id="sum-resta" onClick={() => clickDisminuir(producto.id)}> - </button>
               {producto.cantidad}
-              <button> + </button>
+              <button id="sum-resta" onClick={() => clickAumentar()}> + </button>
             </td>
 
             <td>{producto.precio}</td>

@@ -9,12 +9,7 @@ const SearchBar = () => {
 
   const{carrito, vaciarCarrito, guardarCarrito} =useContext(CarritoContext)
 
-  const handleComprar = () =>{
-    //Compra todos los productos en el Holder
-    
-    guardarCarrito(carrito)
-    vaciarCarrito()
-   } 
+   
 
    const handleLimpiarCarrito = () =>{
     vaciarCarrito()
@@ -27,7 +22,15 @@ const SearchBar = () => {
     navigate('/Carrito');
   };
 
+const handleComprar = () =>{
+    //Compra todos los productos en el Holder
     
+    guardarCarrito(carrito)
+    vaciarCarrito()
+    navigate('/Comprando');
+
+ }    
+
       if(carrito.length  > 0){
         // return carrito
         artDelCarro = carrito.length;

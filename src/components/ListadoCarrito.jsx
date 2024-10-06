@@ -2,17 +2,20 @@ import React, { useContext } from 'react'
 import ItemCarrito from './ItemCarrito'
 import CarritoContext from '../context/CarritoContext'
 import './Tabla.scss'
+import { useNavigate } from 'react-router'
 
 
 const ListadoCarrito = () => {
 
   const{carrito, vaciarCarrito, guardarCarrito} =useContext(CarritoContext)
 
+  const navigate = useNavigate()
   const handleComprar = () =>{
       // Compra todos los productos en la pag del CARRito
-    
-    guardarCarrito(carrito)
-    vaciarCarrito()
+      
+      guardarCarrito(carrito)
+      vaciarCarrito()
+      navigate('/Comprando');
   }
 
   const handleLimpiarCarrito = () =>{
@@ -53,11 +56,15 @@ const ListadoCarrito = () => {
 
     {!carrito.length <= 0 && (
 
-        <>
-             <button className="form__enviar" onClick={handleLimpiarCarrito}>Vaciar Todo El Carrito</button>
-             <button className="form__enviar"onClick={handleComprar}>Comrpar Todo el Carrito</button>
+    <div className="end">
+        <ul className="flex-editar">
+             <button className="end__bottom" onClick={handleLimpiarCarrito}>Vaciar Todo El Carrito</button>
+        </ul>
+        <ul className="flex-editar">
+             <button className="end__bottom"onClick={handleComprar}>Comrpar Todo el Carrito</button>
 
-        </>
+         </ul>
+    </div>
     )}
     
 
