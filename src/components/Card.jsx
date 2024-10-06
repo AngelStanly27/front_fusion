@@ -36,6 +36,5 @@ const Card = ({producto}) => {
         </article>
     </div> 
   )  
-  // return <pasarId key={producto.id} producto={producto} />;
 }
 export default Card 
