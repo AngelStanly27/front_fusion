@@ -1,0 +1,51 @@
+table.tabla-alta {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 2rem auto;
+    box-shadow: 1px 1px 5px 3px var(--sombra-caja);
+ 
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: .6rem;
+        text-align: left;
+        text-align: center;
+        display: table-cell;
+        @media (max-width: 400px){
+          width: 4.5rem;
+        }
+        
+    }
+    @media (max-width: 650px){
+      width: 95%;
+    }
+
+    @media (max-width: 400px){
+      margin: 2rem 0;
+    }
+}
+#elim-comprar{
+  display: flex;
+  justify-content: space-around;
+
+    @media (max-width: 400px){
+       flex-direction: column;
+    }
+}
+#elim-comprar button{
+  width: 7rem;
+    @media (max-width: 650px){
+    width: 5.5rem;
+    }
+
+    @media (max-width: 400px){
+      width: 4.5rem;
+      font-size: .8rem;
+    }
+
+}
+#no_mostar{
+  @media (max-width: 768px){
+    display: none;
+}
+}
